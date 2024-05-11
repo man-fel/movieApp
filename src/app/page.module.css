@@ -1,0 +1,53 @@
+.container{
+    display: flex;
+    align-items: center;
+}
+.poster{
+    margin-right: 20px;
+}
+.details{
+    flex-grow: 1;
+    align-items: flex-start;
+    margin: 15px;
+    margin-top: 10px;
+}
+.details h1{
+    font-size: 50px;
+}
+.searchbar {
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.486);
+  border-radius: 10px;
+  overflow: hidden;
+  border: none;
+  align-items: center;
+  margin: 10px auto; /* Move the search bar towards the center */
+  width: calc(50% - 20px); /* Adjust width as needed */
+  max-width: 400px; /* Limit maximum width */
+  box-sizing: border-box;
+}
+
+.searchbar input {
+  flex: 1;
+  padding: 15px;
+  background-color: transparent; /* Update background color */
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 16px;
+}
+.searchbar input::placeholder{
+    color: rgba(255, 255, 255, 0.5); 
+}
+.searchbar button {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(26, 22, 11, 0.123);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: white;
+}
+.space{
+    line-height: 3.0;
+}

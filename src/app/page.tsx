@@ -25,19 +25,28 @@ export default function Home() {
   useEffect(()=> {getMovieData()}, [])
   
   return (
-   <div>
-    <div className={styles.serachbar}>
-      <input type="search" placeholder="Movie name" />
-      <button onClick={getMovieData}><SearchIcon/></button>
+    <div>
+      <div className={styles.searchbar}>
+        <input type="search" placeholder="Movie name" onChange={(e)=> setMovie(e.target.value)} />
+        <button onClick={getMovieData}><SearchIcon/></button>
       </div>
-   </div>
       {movieData && (
-          <div>
-            <h2>movieData.Title</h2>
-            <p>movieData.Plot</p>
-            <img src={movieData.poster} alt={movieData.title} />
+        <div className={styles.container}>
+          <div className={styles.poster}>
+          {movieData.Poster && <img src={movieData.Poster} alt={movieData.Title} />}
           </div>
-        )
-      }
+          <div className={styles.details}>
+          <h1>{movieData.Title}</h1>
+          <h2>Rating: {movieData.Rated}</h2>
+          <div className={styles.space}>
+          <p><em><strong>Plot:</strong></em> {movieData.Plot}</p>
+          <p><em><strong>Released:</strong></em> {movieData.Released}</p>
+          <p><em><strong>Cast:</strong></em> {movieData.Actors}</p>
+          <p><em><strong>Awards:</strong></em> {movieData.Awards}</p>
+          </div>
+          </div>
+        </div>
+      )}
+    </div>
   );
 }
