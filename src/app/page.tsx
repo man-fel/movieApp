@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import { useEffect, useState } from "react";
 import SearchIcon from '@mui/icons-material/Search';
+import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 
 let MOVIE_API_KEY = process.env.NEXT_PUBLIC_MOVIE_API_KEY
 
@@ -32,7 +33,7 @@ export default function Home() {
   return (
     <div>
       <div className={styles.searchbar}>
-        <input type="search" placeholder="Movie name" onChange={(e)=> setMovie(e.target.value)} />
+        <input type="search" placeholder="Enter the movie title" onChange={(e)=> setMovie(e.target.value)} />
         <button onClick={getMovieData}><SearchIcon/></button>
       </div>
       {loading ? (
@@ -53,6 +54,7 @@ export default function Home() {
           <p><em><strong>Released:</strong></em> {movieData.Released}</p>
           <p><em><strong>Cast:</strong></em> {movieData.Actors}</p>
           <p><em><strong>Awards:</strong></em> {movieData.Awards}</p>
+          <p><em><strong>Watch Here: <OpenInNewIcon/> </strong></em></p>
         </div>
       </div>
     </div>
