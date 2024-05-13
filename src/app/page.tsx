@@ -40,7 +40,7 @@ export default function Home() {
   <div className={styles.loading}>
     <div className={styles.spinner}></div>
   </div>
-) : (
+) : ( 
   movieData && (
     <div className={styles.container}>
       <div className={styles.poster}>
